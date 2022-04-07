@@ -1,4 +1,5 @@
 import ornamentImg from './ornament.png';
+import githubImg from './GitHub-Mark-32px.png'
 
 export default loadContact;
 
@@ -18,6 +19,13 @@ function loadContact(content) {
   const phone = document.createElement('p');
   const name = document.createElement('p');
   const email = document.createElement('p');
+  const divImg = document.createElement('div');
+  const tag = document.createElement('a');
+
+  tag.href = "https://github.com/sejego";
+  tag.target = '_blank';
+  divImg.style.display = 'flex';
+  divImg.style.justifyContent = 'center';
   
   address.textContent = "123 P. Gourouni Main Street, Patras, Greece, 12550";
   phone.textContent = "+34 12564 78953";
@@ -37,6 +45,12 @@ function loadContact(content) {
   ornament.height = 120;
   const imgContainer = document.createElement('div');
   imgContainer.id = 'img-container';
+
+  const github = new Image();
+  github.src = githubImg;
+  tag.appendChild(github)
+  divImg.appendChild(tag);
+  menuDiv.appendChild(divImg);
 
   imgContainer.appendChild(ornament);
   menuDiv.appendChild(imgContainer);
